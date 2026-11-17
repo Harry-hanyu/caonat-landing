@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CAONAT — Ecommerce Growth on TikTok</title>
+  <meta name="description" content="CAONAT operates TikTok Shop in the United States and builds internal reporting for advertising performance, product insights, and commerce decisions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12151a;
+      --muted: #5c6570;
+      --line: #e4e1da;
+      --paper: #f7f4ee;
+      --card: #fffcf7;
+      --accent: #c45c26;
+      --accent-deep: #9a3f12;
+      --soft: #f0e8df;
+      --dark: #1a1f27;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 480px at 8% -8%, #efe6dc 0%, transparent 55%),
+        radial-gradient(700px 420px at 100% 0%, #e8eee9 0%, transparent 50%),
+        var(--paper);
+      font-family: "DM Sans", system-ui, sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, 100%); margin: 0 auto; padding: 0 20px; }
+
+    header.nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0 8px;
+    }
+    .brand {
+      font-weight: 700; letter-spacing: .04em; font-size: 15px;
+      text-decoration: none;
+    }
+    .nav a.site {
+      font-size: 14px; color: var(--muted); text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .nav a.site:hover { color: var(--ink); border-bottom-color: var(--line); }
+
+    .hero {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent-deep);
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      max-width: 11ch;
+    }
+    .lead {
+      margin: 0;
+      max-width: 36em;
+      font-size: 18px;
+      color: var(--muted);
+    }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 10px 28px;
+      margin-top: 28px; padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: 14px; color: var(--muted);
+    }
+    .meta b { color: var(--ink); font-weight: 600; }
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    section h2 {
+      margin: 0 0 10px;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 400;
+      letter-spacing: -.01em;
+    }
+    section .intro {
+      margin: 0 0 28px;
+      color: var(--muted);
+      max-width: 42em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      min-height: 96px;
+    }
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      font-weight: 650;
+    }
+    .card p {
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .api {
+      background: var(--dark);
+      color: #e8e6e1;
+      border-radius: 18px;
+      padding: 28px 28px 24px;
+      margin-top: 8px;
+    }
+    .api h2 { color: #fff; margin-bottom: 8px; }
+    .api .intro { color: #a8b0ba; }
+    .api-box {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 20px 22px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #d7d3cb;
+    }
+    .api-box strong { color: #fff; font-weight: 600; }
+    .checks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .check {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+    .check b { display: block; color: #fff; margin-bottom: 4px; font-size: 14px; }
+    .check span { color: #9aa3ad; font-size: 13.5px; }
+
+    footer {
+      padding: 28px 0 40px;
+      display: flex; flex-wrap: wrap;
+      justify-content: space-between; gap: 12px;
+      font-size: 13px; color: var(--muted);
+    }
+    footer a { color: var(--ink); text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 820px) {
+      .grid, .checks { grid-template-columns: 1fr 1fr; }
+      .hero { padding: 40px 0 36px; }
+    }
+    @media (max-width: 560px) {
+      .grid, .checks { grid-template-columns: 1fr; }
+      h1 { max-width: none; }
+      .api { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="https://caonat.vip">CAONAT</a>
+      <a class="site" href="https://caonat.vip">caonat.vip</a>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">United States · Ecommerce</div>
+      <h1>CAONAT</h1>
+      <p class="lead">
+        We operate CAONAT TikTok Shop and build internal tools to understand advertising performance,
+        product results, and commerce decisions — for our own business.
+      </p>
+      <div class="meta">
+        <div><b>Market</b> United States</div>
+        <div><b>Industry</b> Ecommerce</div>
+        <div><b>Website</b> caonat.vip</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What we use TikTok for</h2>
+      <p class="intro">
+        CAONAT integrates with TikTok capabilities to run our store, manage advertising, and report
+        performance internally across the business.
+      </p>
+      <div class="grid">
+        <div class="card"><h3>Reporting</h3><p>Internal dashboards for spend, revenue, orders, and ROI.</p></div>
+        <div class="card"><h3>Promotion management</h3><p>Campaign setup and day-to-day advertising operations.</p></div>
+        <div class="card"><h3>Creative management</h3><p>Organize and iterate ad creatives for our own campaigns.</p></div>
+        <div class="card"><h3>Audience management</h3><p>Define and refine audiences for advertising decisions.</p></div>
+        <div class="card"><h3>Product catalog management</h3><p>Keep product data aligned across shop and advertising.</p></div>
+        <div class="card"><h3>Business Center</h3><p>Manage business assets and access for our internal team.</p></div>
+        <div class="card"><h3>Ad measurement</h3><p>Track attributed performance to support spend decisions.</p></div>
+        <div class="card"><h3>TikTok Shop</h3><p>Operate our CAONAT storefront and commerce workflow.</p></div>
+        <div class="card"><h3>Account management</h3><p>Administer accounts used by our internal operators.</p></div>
+        <div class="card"><h3>TikTok Creator Marketplace</h3><p>Coordinate creator collaborations for our brand.</p></div>
+      </div>
+    </section>
+
+    <section style="border-bottom:0;padding-bottom:20px">
+      <div class="api">
+        <h2>TikTok Business API usage</h2>
+        <p class="intro">How CAONAT intends to use TikTok Marketing API access.</p>
+        <div class="api-box">
+          We operate the <strong>CAONAT TikTok Shop</strong> and plan to use the
+          <strong>TikTok Marketing API</strong> to build an <strong>internal reporting dashboard</strong>
+          for our own business. We primarily need <strong>read-only access</strong> to
+          <strong>GMV Max advertising performance</strong>, including ad spend, attributed revenue,
+          orders, and ROI, with daily and product-level reporting. The data will be used by our
+          <strong>internal team</strong> to monitor performance and support advertising decisions.
+          <strong>We will not provide data to third parties.</strong>
+        </div>
+        <div class="checks">
+          <div class="check">
+            <b>Access type</b>
+            <span>Read-only advertising performance data</span>
+          </div>
+          <div class="check">
+            <b>Focus</b>
+            <span>GMV Max: spend, attributed revenue, orders, ROI</span>
+          </div>
+          <div class="check">
+            <b>Granularity</b>
+            <span>Daily and product-level reporting</span>
+          </div>
+          <div class="check">
+            <b>Data use</b>
+            <span>Internal monitoring only — not shared externally</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> CAONAT</div>
+      <a href="https://caonat.vip">caonat.vip</a>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
