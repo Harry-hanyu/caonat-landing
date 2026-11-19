@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CAONAT | US Ecommerce Brand</title>
-  <meta name="description" content="CAONAT is a United States ecommerce brand operating TikTok Shop. We sell consumer products online and use first-party data to improve advertising and catalog performance for our own stores." />
+  <title>CAONAT | Everyday Essentials for Modern Living</title>
+  <meta name="description" content="CAONAT is a United States ecommerce brand offering everyday essentials across beauty, home, and lifestyle. Shop our TikTok Shop and discover thoughtfully selected products." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://caonat.vip/" />
-  <meta property="og:title" content="CAONAT | US Ecommerce Brand" />
-  <meta property="og:description" content="United States ecommerce brand operating TikTok Shop and building internal performance tools for our own business." />
+  <meta property="og:title" content="CAONAT | Everyday Essentials for Modern Living" />
+  <meta property="og:description" content="US ecommerce brand for beauty, home, and lifestyle essentials. Available on TikTok Shop." />
   <meta property="og:url" content="https://caonat.vip/" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://caonat.vip/images/hero-lifestyle.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #14181f;
-      --muted: #5a6470;
-      --line: #ddd8cf;
-      --bg: #f6f3ec;
-      --card: #fffdf9;
+      --ink: #161a20;
+      --muted: #5b6572;
+      --line: #e2ddd4;
+      --bg: #f5f2eb;
+      --card: #fffcf8;
       --accent: #0f6b5c;
-      --accent-2: #c45c26;
+      --accent-deep: #0a4f44;
+      --warm: #c45c26;
       --dark: #10151c;
     }
     * { box-sizing: border-box; }
@@ -30,108 +32,115 @@
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(1000px 520px at 0% -10%, #e7eee9 0%, transparent 55%),
-        radial-gradient(800px 420px at 100% 0%, #efe6dc 0%, transparent 50%),
-        var(--bg);
+      background: var(--bg);
       font-family: "DM Sans", system-ui, sans-serif;
       line-height: 1.65;
       font-size: 16px;
     }
     a { color: var(--accent); }
-    .wrap { width: min(1100px, 100%); margin: 0 auto; padding: 0 22px; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, 100%); margin: 0 auto; padding: 0 22px; }
     .nav {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; padding: 20px 0; flex-wrap: wrap;
+      gap: 16px; padding: 18px 0; flex-wrap: wrap;
     }
     .brand {
-      font-weight: 700; letter-spacing: .08em; font-size: 15px;
+      font-weight: 700; letter-spacing: .1em; font-size: 15px;
       text-decoration: none; color: var(--ink);
     }
     .nav-links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; }
     .nav-links a { color: var(--muted); text-decoration: none; }
     .nav-links a:hover { color: var(--ink); }
+    .btn {
+      display: inline-block; text-decoration: none;
+      background: var(--accent); color: #fff !important;
+      padding: 12px 18px; border-radius: 999px; font-weight: 600; font-size: 14px;
+    }
+    .btn.secondary {
+      background: transparent; color: var(--ink) !important;
+      border: 1px solid var(--line);
+    }
     .hero {
-      padding: 48px 0 56px;
-      border-bottom: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 36px;
-      align-items: end;
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px;
+      align-items: center; padding: 28px 0 48px;
     }
     .eyebrow {
       font-size: 12px; font-weight: 700; letter-spacing: .14em;
-      text-transform: uppercase; color: var(--accent); margin: 0 0 14px;
+      text-transform: uppercase; color: var(--accent); margin: 0 0 12px;
     }
     h1 {
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(40px, 6vw, 64px);
-      font-weight: 600; line-height: 1.05; letter-spacing: -.02em;
+      font-size: clamp(36px, 5.5vw, 56px);
+      font-weight: 600; line-height: 1.08; letter-spacing: -.02em;
     }
-    .lead { margin: 0; color: var(--muted); font-size: 18px; max-width: 38em; }
-    .hero-side {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
+    .lead { margin: 0 0 22px; color: var(--muted); font-size: 18px; max-width: 34em; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-visual {
+      border-radius: 22px; overflow: hidden; border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(20, 24, 30, .08);
+      aspect-ratio: 16/10; background: #ddd;
     }
-    .hero-side dt { font-size: 12px; color: var(--muted); margin-top: 12px; }
-    .hero-side dt:first-child { margin-top: 0; }
-    .hero-side dd { margin: 2px 0 0; font-weight: 600; }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .trust {
+      display: flex; flex-wrap: wrap; gap: 10px 22px;
+      padding: 14px 0 8px; border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px;
+    }
+    .trust b { color: var(--ink); }
     section { padding: 52px 0; border-bottom: 1px solid var(--line); }
     section h2 {
       margin: 0 0 10px;
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(26px, 3.5vw, 34px);
-      font-weight: 600;
+      font-size: clamp(26px, 3.4vw, 34px); font-weight: 600;
     }
     .intro { margin: 0 0 26px; color: var(--muted); max-width: 46em; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 18px;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 16px; overflow: hidden;
     }
-    .card h3 { margin: 0 0 8px; font-size: 16px; }
+    .card .body { padding: 16px; }
+    .card h3 { margin: 0 0 6px; font-size: 16px; }
     .card p { margin: 0; color: var(--muted); font-size: 14px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-    .chip {
-      border: 1px solid var(--line);
-      background: #fff;
-      border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 13px;
-      color: var(--ink);
+    .card .pic { aspect-ratio: 1; background: #eee; }
+    .card .pic img { width: 100%; height: 100%; object-fit: cover; }
+    .tag {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent-deep); margin-bottom: 8px;
     }
-    .api {
-      background: var(--dark);
-      color: #e8e6e1;
-      border-radius: 18px;
-      padding: 26px;
+    .about-panel {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px;
     }
-    .api h2 { color: #fff; }
-    .api .intro { color: #a8b0ba; }
-    .api-box {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      padding: 18px 20px;
-      font-size: 15px;
-      line-height: 1.7;
-      color: #d7d3cb;
+    .facts {
+      background: var(--dark); color: #e8e6e1; border-radius: 16px; padding: 22px;
     }
-    .api-box strong { color: #fff; }
+    .facts h3 { margin: 0 0 12px; color: #fff; font-size: 16px; }
+    .facts dl { margin: 0; }
+    .facts dt { font-size: 12px; color: #9aa3ad; margin-top: 12px; }
+    .facts dt:first-child { margin-top: 0; }
+    .facts dd { margin: 2px 0 0; font-weight: 600; color: #fff; }
+    .api-note {
+      background: #fff; border: 1px dashed var(--line); border-radius: 14px;
+      padding: 16px 18px; color: var(--muted); font-size: 14px;
+    }
+    .api-note strong { color: var(--ink); }
     footer {
-      padding: 28px 0 40px;
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+      padding: 28px 0 42px;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px;
       font-size: 13px; color: var(--muted);
     }
     footer a { color: var(--ink); text-decoration: none; font-weight: 600; margin-right: 14px; }
-    @media (max-width: 860px) {
-      .hero, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      .hero, .about-panel, .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr 1fr; }
+      .hero { grid-template-columns: 1fr; }
+      .about-panel { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -140,10 +149,10 @@
     <header class="nav">
       <a class="brand" href="/">CAONAT</a>
       <nav class="nav-links" aria-label="Primary">
+        <a href="#products">Products</a>
+        <a href="#collections">Collections</a>
         <a href="#about">About</a>
-        <a href="#operations">Operations</a>
-        <a href="#integrations">Platform Use</a>
-        <a href="#api">API Use</a>
+        <a href="#shop">Shop</a>
         <a href="#contact">Contact</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
@@ -152,116 +161,153 @@
 
     <section class="hero">
       <div>
-        <p class="eyebrow">United States · Ecommerce</p>
-        <h1>CAONAT</h1>
+        <p class="eyebrow">United States · Ecommerce Brand</p>
+        <h1>Everyday essentials, thoughtfully selected.</h1>
         <p class="lead">
-          CAONAT is a US ecommerce brand. We operate our own TikTok Shop and sell consumer products
-          online. Our internal team builds reporting and advertising workflows only for CAONAT-owned stores —
-          not as a third-party agency product.
+          CAONAT is a US ecommerce brand for modern daily living — beauty care, home essentials,
+          and lifestyle accessories. We operate our own TikTok Shop and serve customers across the United States.
         </p>
+        <div class="cta-row">
+          <a class="btn" href="#products">Explore products</a>
+          <a class="btn secondary" href="#shop">Shop on TikTok</a>
+        </div>
       </div>
-      <dl class="hero-side">
-        <dt>Legal / brand</dt><dd>CAONAT</dd>
-        <dt>Website</dt><dd>caonat.vip</dd>
-        <dt>Primary market</dt><dd>United States</dd>
-        <dt>Industry</dt><dd>Ecommerce / Retail</dd>
-        <dt>Channel</dt><dd>TikTok Shop &amp; digital advertising</dd>
-      </dl>
+      <div class="hero-visual">
+        <img src="/images/hero-lifestyle.jpg" width="1200" height="750" alt="CAONAT everyday essentials lifestyle flatlay" />
+      </div>
+    </section>
+
+    <div class="trust">
+      <div><b>Market</b> United States</div>
+      <div><b>Channel</b> TikTok Shop + digital commerce</div>
+      <div><b>Model</b> Own-brand retail</div>
+      <div><b>Focus</b> Beauty · Home · Lifestyle</div>
+    </div>
+
+    <section id="products">
+      <h2>Featured products</h2>
+      <p class="intro">A curated mix of daily-use products designed for simple routines and reliable quality.</p>
+      <div class="grid-4">
+        <article class="card">
+          <div class="pic"><img src="/images/product-serum.jpg" width="600" height="600" alt="CAONAT clarifying serum bottle" loading="lazy" /></div>
+          <div class="body">
+            <div class="tag">Beauty</div>
+            <h3>Clarifying Serum</h3>
+            <p>Lightweight daily serum for a clean, hydrated finish.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/images/product-tumbler.jpg" width="600" height="600" alt="CAONAT insulated tumbler" loading="lazy" /></div>
+          <div class="body">
+            <div class="tag">Home</div>
+            <h3>Dayflow Tumbler</h3>
+            <p>Insulated tumbler for commute, desk, and weekend carry.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/images/product-earbuds.jpg" width="600" height="600" alt="CAONAT wireless earbuds" loading="lazy" /></div>
+          <div class="body">
+            <div class="tag">Lifestyle</div>
+            <h3>SoftCase Earbuds</h3>
+            <p>Compact wireless earbuds with a travel-ready charging case.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pic"><img src="/images/product-pouch.jpg" width="600" height="600" alt="CAONAT crossbody pouch" loading="lazy" /></div>
+          <div class="body">
+            <div class="tag">Accessories</div>
+            <h3>Carry Pouch</h3>
+            <p>Structured everyday pouch for keys, cards, and small essentials.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="collections">
+      <h2>Collections</h2>
+      <p class="intro">We organize our catalog around practical routines — not seasonal hype.</p>
+      <div class="grid-3">
+        <div class="card"><div class="body">
+          <h3>Beauty Care</h3>
+          <p>Clean-feeling formulas and simple skincare steps for everyday use.</p>
+        </div></div>
+        <div class="card"><div class="body">
+          <h3>Home Essentials</h3>
+          <p>Functional pieces that keep desks, kitchens, and travel kits organized.</p>
+        </div></div>
+        <div class="card"><div class="body">
+          <h3>On-the-go Lifestyle</h3>
+          <p>Compact accessories and electronics that fit commuting and content days.</p>
+        </div></div>
+      </div>
     </section>
 
     <section id="about">
-      <h2>About the business</h2>
+      <h2>About CAONAT</h2>
+      <div class="about-panel">
+        <div>
+          <p class="intro" style="margin-bottom:14px">
+            CAONAT started as a US-focused ecommerce label built around useful, well-presented everyday products.
+            Our team manages product selection, store operations, customer experience, and advertising for our own stores.
+          </p>
+          <p class="intro" style="margin-bottom:14px">
+            We sell primarily through TikTok Shop and supporting digital channels. Performance data from our own shop and
+            ads accounts is used internally to improve assortment, creative, and spend decisions.
+          </p>
+          <div class="grid-2">
+            <div class="card"><div class="body">
+              <h3>Own-store retail</h3>
+              <p>We operate CAONAT storefronts. We are not a multi-brand agency marketplace.</p>
+            </div></div>
+            <div class="card"><div class="body">
+              <h3>Customer-first catalog</h3>
+              <p>Listings, pricing, and fulfillment coordination stay under CAONAT operations.</p>
+            </div></div>
+          </div>
+        </div>
+        <aside class="facts">
+          <h3>Company snapshot</h3>
+          <dl>
+            <dt>Brand</dt><dd>CAONAT</dd>
+            <dt>Website</dt><dd>caonat.vip</dd>
+            <dt>Primary market</dt><dd>United States</dd>
+            <dt>Industry</dt><dd>Ecommerce / Retail</dd>
+            <dt>Sales channel</dt><dd>TikTok Shop</dd>
+            <dt>Business email</dt><dd>caonat@caonat.vip</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="shop">
+      <h2>Shop with us</h2>
       <p class="intro">
-        We focus on product selection, store operations, customer fulfillment coordination, and paid
-        advertising for our own catalog. Performance data is used by CAONAT operators and managers to
-        improve spend efficiency and inventory decisions.
+        Find CAONAT products on TikTok Shop. For partnership or wholesale questions, email our team and we will route your request.
       </p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Own-store commerce</h3>
-          <p>We sell through CAONAT storefronts. Catalog, pricing, and promotions are managed by our internal team.</p>
-        </div>
-        <div class="card">
-          <h3>Advertising operations</h3>
-          <p>We run and monitor paid campaigns for CAONAT products, with daily review of spend, orders, and ROI.</p>
-        </div>
-        <div class="card">
-          <h3>Internal analytics</h3>
-          <p>We maintain an internal dashboard for first-party advertising and shop performance. Data is not resold.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="operations">
-      <h2>How we operate</h2>
-      <p class="intro">Day-to-day work covers store health, creative testing, audience targeting, and product-level performance review.</p>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Commerce</h3>
-          <p>Product listing quality, inventory readiness, order monitoring, and customer-facing offer management for our TikTok Shop.</p>
-        </div>
-        <div class="card">
-          <h3>Growth</h3>
-          <p>Campaign planning, creative iteration, audience refinement, and measurement against attributed revenue and ROI targets.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="integrations">
-      <h2>TikTok capabilities we use for our own business</h2>
-      <p class="intro">
-        These are operational use cases for CAONAT — not a multi-tenant SaaS offering to other brands.
-      </p>
-      <div class="chips">
-        <span class="chip">Reporting</span>
-        <span class="chip">Promotion management</span>
-        <span class="chip">Creative management</span>
-        <span class="chip">Audience management</span>
-        <span class="chip">Product catalog management</span>
-        <span class="chip">Business Center</span>
-        <span class="chip">Ad measurement</span>
-        <span class="chip">TikTok Shop</span>
-        <span class="chip">Account management</span>
-        <span class="chip">TikTok Creator Marketplace</span>
-      </div>
-    </section>
-
-    <section id="api" style="border-bottom:0;padding-bottom:24px">
-      <div class="api">
-        <h2>TikTok Business API usage</h2>
-        <p class="intro">Intended use of Marketing API access for CAONAT only.</p>
-        <div class="api-box">
-          We operate the <strong>CAONAT TikTok Shop</strong> and plan to use the
-          <strong>TikTok Marketing API</strong> to build an <strong>internal reporting dashboard</strong>
-          for our own business. We primarily need <strong>read-only access</strong> to
-          <strong>GMV Max advertising performance</strong>, including ad spend, attributed revenue,
-          orders, and ROI, with daily and product-level reporting. The data will be used by our
-          <strong>internal team</strong> to monitor performance and support advertising decisions.
-          <strong>We will not provide data to third parties.</strong>
-        </div>
+      <div class="cta-row">
+        <a class="btn" href="https://www.tiktok.com/shop" target="_blank" rel="noopener">Open TikTok Shop</a>
+        <a class="btn secondary" href="mailto:caonat@caonat.vip">Email CAONAT</a>
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p class="intro">
-        Business inquiries related to CAONAT store operations and developer verification:
-        <a href="mailto:hello@caonat.vip">hello@caonat.vip</a>
+        Business and customer inquiries: <a href="mailto:caonat@caonat.vip">caonat@caonat.vip</a>
       </p>
-      <div class="card">
-        <h3>Company facts for verification</h3>
-        <p>
-          Brand: CAONAT<br />
-          Website: <a href="https://caonat.vip">https://caonat.vip</a><br />
-          Primary operating country: United States<br />
-          Vertical: Ecommerce<br />
-          Data use: Internal only / no third-party redistribution
-        </p>
+      <div class="api-note">
+        <strong>Developer note (internal systems):</strong>
+        CAONAT uses TikTok Marketing API access only for our own shop advertising reporting
+        (read-only GMV Max performance such as spend, attributed revenue, orders, and ROI).
+        Data is used by our internal team and is not provided to third parties.
       </div>
     </section>
 
     <footer>
-      <div>© <span id="y"></span> CAONAT. All rights reserved.</div>
+      <div>
+        © <span id="y"></span> CAONAT. All rights reserved.<br />
+        United States ecommerce brand · <a href="mailto:caonat@caonat.vip">caonat@caonat.vip</a>
+      </div>
       <div>
         <a href="/privacy.html">Privacy Policy</a>
         <a href="/terms.html">Terms of Use</a>
