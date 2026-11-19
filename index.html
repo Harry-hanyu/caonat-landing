@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CAONAT | Everyday Essentials for Modern Living</title>
-  <meta name="description" content="CAONAT is a United States ecommerce brand offering everyday essentials across beauty, home, and lifestyle. Shop our TikTok Shop and discover thoughtfully selected products." />
+  <title>CAONAT | Outdoor Leisure Apparel</title>
+  <meta name="description" content="CAONAT is a United States apparel brand for outdoor leisure and everyday menswear — cargo pants, jackets, and smart casual essentials. Shop on Amazon and TikTok Shop." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://caonat.vip/" />
-  <meta property="og:title" content="CAONAT | Everyday Essentials for Modern Living" />
-  <meta property="og:description" content="US ecommerce brand for beauty, home, and lifestyle essentials. Available on TikTok Shop." />
+  <meta property="og:title" content="CAONAT | Outdoor Leisure Apparel" />
+  <meta property="og:description" content="US apparel brand for outdoor leisure menswear. Shop CAONAT on Amazon and TikTok Shop." />
   <meta property="og:url" content="https://caonat.vip/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://caonat.vip/images/hero-lifestyle.jpg" />
+  <meta property="og:image" content="https://caonat.vip/images/hero-banner.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
@@ -22,9 +22,8 @@
       --line: #e2ddd4;
       --bg: #f5f2eb;
       --card: #fffcf8;
-      --accent: #0f6b5c;
-      --accent-deep: #0a4f44;
-      --warm: #c45c26;
+      --accent: #3d4a3a;
+      --accent-deep: #2a3428;
       --dark: #10151c;
     }
     * { box-sizing: border-box; }
@@ -45,9 +44,11 @@
       gap: 16px; padding: 18px 0; flex-wrap: wrap;
     }
     .brand {
+      display: inline-flex; align-items: center; gap: 10px;
       font-weight: 700; letter-spacing: .1em; font-size: 15px;
       text-decoration: none; color: var(--ink);
     }
+    .brand img { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; }
     .nav-links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; }
     .nav-links a { color: var(--muted); text-decoration: none; }
     .nav-links a:hover { color: var(--ink); }
@@ -81,7 +82,12 @@
       box-shadow: 0 18px 40px rgba(20, 24, 30, .08);
       aspect-ratio: 16/10; background: #ddd;
     }
-    .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .banner {
+      border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+      margin: 8px 0 0;
+    }
+    .banner img { width: 100%; height: auto; }
     .trust {
       display: flex; flex-wrap: wrap; gap: 10px 22px;
       padding: 14px 0 8px; border-top: 1px solid var(--line);
@@ -105,8 +111,9 @@
     .card .body { padding: 16px; }
     .card h3 { margin: 0 0 6px; font-size: 16px; }
     .card p { margin: 0; color: var(--muted); font-size: 14px; }
-    .card .pic { aspect-ratio: 1; background: #eee; }
-    .card .pic img { width: 100%; height: 100%; object-fit: cover; }
+    .card .pic { aspect-ratio: 3/4; background: #eee; }
+    .card .pic img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .card .pic.wide { aspect-ratio: 16/10; }
     .tag {
       display: inline-block; font-size: 11px; font-weight: 700;
       letter-spacing: .08em; text-transform: uppercase;
@@ -147,7 +154,10 @@
 <body>
   <div class="wrap">
     <header class="nav">
-      <a class="brand" href="/">CAONAT</a>
+      <a class="brand" href="/">
+        <img src="/images/logo-caonat.jpeg" width="36" height="36" alt="" />
+        CAONAT
+      </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#products">Products</a>
         <a href="#collections">Collections</a>
@@ -161,63 +171,68 @@
 
     <section class="hero">
       <div>
-        <p class="eyebrow">United States · Ecommerce Brand</p>
-        <h1>Everyday essentials, thoughtfully selected.</h1>
+        <p class="eyebrow">United States · Apparel Brand</p>
+        <h1>Outdoor leisure, built for everyday wear.</h1>
         <p class="lead">
-          CAONAT is a US ecommerce brand for modern daily living — beauty care, home essentials,
-          and lifestyle accessories. We operate our own TikTok Shop and serve customers across the United States.
+          CAONAT is a US apparel brand focused on outdoor leisure menswear —
+          cargo pants, jackets, denim, and smart casual pieces designed for city and trail.
+          Shop our official Amazon storefront and TikTok Shop.
         </p>
         <div class="cta-row">
-          <a class="btn" href="#products">Explore products</a>
-          <a class="btn secondary" href="#shop">Shop on TikTok</a>
+          <a class="btn" href="https://www.amazon.com/stores/CAONAT/page/6CA7C3E5-494B-454C-8E9F-D891DC98B8BB" target="_blank" rel="noopener">Shop on Amazon</a>
+          <a class="btn secondary" href="#products">Explore products</a>
         </div>
       </div>
       <div class="hero-visual">
-        <img src="/images/hero-lifestyle.jpg" width="1200" height="750" alt="CAONAT everyday essentials lifestyle flatlay" />
+        <img src="/images/hero-lifestyle.jpg" width="1200" height="750" alt="CAONAT outdoor leisure apparel lifestyle" />
       </div>
     </section>
 
+    <div class="banner">
+      <img src="/images/hero-banner.jpg" width="1500" height="486" alt="CAONAT menswear lineup — cargo, casual, and outdoor styles" />
+    </div>
+
     <div class="trust">
       <div><b>Market</b> United States</div>
-      <div><b>Channel</b> TikTok Shop + digital commerce</div>
+      <div><b>Channels</b> Amazon Store · TikTok Shop</div>
       <div><b>Model</b> Own-brand retail</div>
-      <div><b>Focus</b> Beauty · Home · Lifestyle</div>
+      <div><b>Focus</b> Pants · Jackets · Outdoor Leisure</div>
     </div>
 
     <section id="products">
       <h2>Featured products</h2>
-      <p class="intro">A curated mix of daily-use products designed for simple routines and reliable quality.</p>
+      <p class="intro">Best-selling CAONAT styles from our Amazon storefront — functional fits with everyday comfort.</p>
       <div class="grid-4">
         <article class="card">
-          <div class="pic"><img src="/images/product-serum.jpg" width="600" height="600" alt="CAONAT clarifying serum bottle" loading="lazy" /></div>
+          <div class="pic"><img src="/images/product-cargo.jpg" width="600" height="800" alt="CAONAT men's baggy wide leg cargo pants" loading="lazy" /></div>
           <div class="body">
-            <div class="tag">Beauty</div>
-            <h3>Clarifying Serum</h3>
-            <p>Lightweight daily serum for a clean, hydrated finish.</p>
+            <div class="tag">Pants</div>
+            <h3>Wide Leg Cargo Pants</h3>
+            <p>Baggy parachute cargo pants with elastic waist — hiking, work, and travel.</p>
           </div>
         </article>
         <article class="card">
-          <div class="pic"><img src="/images/product-tumbler.jpg" width="600" height="600" alt="CAONAT insulated tumbler" loading="lazy" /></div>
+          <div class="pic"><img src="/images/product-jacket.jpg" width="600" height="800" alt="CAONAT men's waterproof hard shell rain jacket" loading="lazy" /></div>
           <div class="body">
-            <div class="tag">Home</div>
-            <h3>Dayflow Tumbler</h3>
-            <p>Insulated tumbler for commute, desk, and weekend carry.</p>
+            <div class="tag">Outerwear</div>
+            <h3>Hard Shell Rain Jacket</h3>
+            <p>Lightweight waterproof hooded jacket for outdoor days and commute.</p>
           </div>
         </article>
         <article class="card">
-          <div class="pic"><img src="/images/product-earbuds.jpg" width="600" height="600" alt="CAONAT wireless earbuds" loading="lazy" /></div>
+          <div class="pic"><img src="/images/product-jeans.jpg" width="600" height="800" alt="CAONAT baggy wide leg skater denim jeans" loading="lazy" /></div>
           <div class="body">
-            <div class="tag">Lifestyle</div>
-            <h3>SoftCase Earbuds</h3>
-            <p>Compact wireless earbuds with a travel-ready charging case.</p>
+            <div class="tag">Denim</div>
+            <h3>Baggy Wide Leg Jeans</h3>
+            <p>Loose-fit skater denim with a relaxed streetwear silhouette.</p>
           </div>
         </article>
         <article class="card">
-          <div class="pic"><img src="/images/product-pouch.jpg" width="600" height="600" alt="CAONAT crossbody pouch" loading="lazy" /></div>
+          <div class="pic"><img src="/images/product-dress-pants.jpg" width="600" height="800" alt="CAONAT men's pleated wide leg dress pants" loading="lazy" /></div>
           <div class="body">
-            <div class="tag">Accessories</div>
-            <h3>Carry Pouch</h3>
-            <p>Structured everyday pouch for keys, cards, and small essentials.</p>
+            <div class="tag">Smart Casual</div>
+            <h3>Pleated Wide Leg Pants</h3>
+            <p>Elastic-waist dress trousers for work, weekend, and layered looks.</p>
           </div>
         </article>
       </div>
@@ -225,20 +240,29 @@
 
     <section id="collections">
       <h2>Collections</h2>
-      <p class="intro">We organize our catalog around practical routines — not seasonal hype.</p>
+      <p class="intro">Curated edits from the CAONAT Amazon store — pants-first, outdoor leisure ready.</p>
       <div class="grid-3">
-        <div class="card"><div class="body">
-          <h3>Beauty Care</h3>
-          <p>Clean-feeling formulas and simple skincare steps for everyday use.</p>
-        </div></div>
-        <div class="card"><div class="body">
-          <h3>Home Essentials</h3>
-          <p>Functional pieces that keep desks, kitchens, and travel kits organized.</p>
-        </div></div>
-        <div class="card"><div class="body">
-          <h3>On-the-go Lifestyle</h3>
-          <p>Compact accessories and electronics that fit commuting and content days.</p>
-        </div></div>
+        <article class="card">
+          <div class="pic wide"><img src="/images/collection-outdoor.jpg" width="800" height="500" alt="CAONAT outdoor leisure collection" loading="lazy" /></div>
+          <div class="body">
+            <h3>Outdoor Leisure</h3>
+            <p>Utility vests, cargo pants, and trail-ready layers for weekend adventures.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pic wide"><img src="/images/collection-casual.jpg" width="800" height="500" alt="CAONAT smart casual trousers collection" loading="lazy" /></div>
+          <div class="body">
+            <h3>Smart Casual</h3>
+            <p>Clean trousers and textured shirts for city days and easy evenings.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="pic wide"><img src="/images/product-shirt.jpg" width="800" height="500" alt="CAONAT waffle knit shirt jacket" loading="lazy" /></div>
+          <div class="body">
+            <h3>Tops &amp; Layers</h3>
+            <p>Waffle knits, oversized tees, and light outer layers to complete the look.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -247,20 +271,22 @@
       <div class="about-panel">
         <div>
           <p class="intro" style="margin-bottom:14px">
-            CAONAT started as a US-focused ecommerce label built around useful, well-presented everyday products.
-            Our team manages product selection, store operations, customer experience, and advertising for our own stores.
+            CAONAT is a US-focused apparel label built around outdoor leisure and everyday menswear.
+            We design and sell our own catalog — from baggy cargo pants to waterproof shells —
+            through our official Amazon storefront and TikTok Shop.
           </p>
           <p class="intro" style="margin-bottom:14px">
-            We sell primarily through TikTok Shop and supporting digital channels. Performance data from our own shop and
-            ads accounts is used internally to improve assortment, creative, and spend decisions.
+            Our team manages product selection, store operations, customer experience, and advertising
+            for CAONAT-owned storefronts. Performance data from our shops and ads is used internally
+            to improve assortment, creative, and spend decisions.
           </p>
           <div class="grid-2">
             <div class="card"><div class="body">
               <h3>Own-store retail</h3>
-              <p>We operate CAONAT storefronts. We are not a multi-brand agency marketplace.</p>
+              <p>We operate CAONAT storefronts on Amazon and TikTok. We are not a multi-brand agency marketplace.</p>
             </div></div>
             <div class="card"><div class="body">
-              <h3>Customer-first catalog</h3>
+              <h3>Apparel-first catalog</h3>
               <p>Listings, pricing, and fulfillment coordination stay under CAONAT operations.</p>
             </div></div>
           </div>
@@ -271,8 +297,9 @@
             <dt>Brand</dt><dd>CAONAT</dd>
             <dt>Website</dt><dd>caonat.vip</dd>
             <dt>Primary market</dt><dd>United States</dd>
-            <dt>Industry</dt><dd>Ecommerce / Retail</dd>
-            <dt>Sales channel</dt><dd>TikTok Shop</dd>
+            <dt>Industry</dt><dd>Apparel / Ecommerce</dd>
+            <dt>Amazon store</dt><dd>stores/CAONAT</dd>
+            <dt>Sales channels</dt><dd>Amazon · TikTok Shop</dd>
             <dt>Business email</dt><dd>caonat@caonat.vip</dd>
           </dl>
         </aside>
@@ -282,10 +309,11 @@
     <section id="shop">
       <h2>Shop with us</h2>
       <p class="intro">
-        Find CAONAT products on TikTok Shop. For partnership or wholesale questions, email our team and we will route your request.
+        Browse the full CAONAT catalog on our official Amazon store. You can also find selected styles on TikTok Shop.
       </p>
       <div class="cta-row">
-        <a class="btn" href="https://www.tiktok.com/shop" target="_blank" rel="noopener">Open TikTok Shop</a>
+        <a class="btn" href="https://www.amazon.com/stores/CAONAT/page/6CA7C3E5-494B-454C-8E9F-D891DC98B8BB" target="_blank" rel="noopener">Open Amazon Store</a>
+        <a class="btn secondary" href="https://www.tiktok.com/shop" target="_blank" rel="noopener">TikTok Shop</a>
         <a class="btn secondary" href="mailto:caonat@caonat.vip">Email CAONAT</a>
       </div>
     </section>
@@ -306,11 +334,12 @@
     <footer>
       <div>
         © <span id="y"></span> CAONAT. All rights reserved.<br />
-        United States ecommerce brand · <a href="mailto:caonat@caonat.vip">caonat@caonat.vip</a>
+        United States apparel brand · <a href="mailto:caonat@caonat.vip">caonat@caonat.vip</a>
       </div>
       <div>
         <a href="/privacy.html">Privacy Policy</a>
         <a href="/terms.html">Terms of Use</a>
+        <a href="https://www.amazon.com/stores/CAONAT/page/6CA7C3E5-494B-454C-8E9F-D891DC98B8BB" target="_blank" rel="noopener">Amazon Store</a>
         <a href="https://caonat.vip">caonat.vip</a>
       </div>
     </footer>
