@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>TikTok Ads OAuth Callback · CAONAT</title>
+  <style>
+    :root { --ink:#161a20; --muted:#5b6572; --bg:#f5f2eb; --card:#fffcf8; --ok:#2a3428; --err:#8b2e2e; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+    .wrap { max-width:720px; margin:48px auto; padding:0 20px; }
+    .card { background:var(--card); border:1px solid #e2ddd4; border-radius:12px; padding:28px; }
+    h1 { font-size:1.35rem; margin:0 0 8px; }
+    p { color:var(--muted); line-height:1.55; }
+    .ok { color:var(--ok); font-weight:600; }
+    .err { color:var(--err); font-weight:600; }
+    label { display:block; margin:16px 0 6px; font-size:.85rem; color:var(--muted); }
+    textarea, input { width:100%; box-sizing:border-box; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px; padding:10px 12px; border:1px solid #d5d0c6; border-radius:8px; background:#fff; }
+    textarea { min-height:88px; }
+    button { margin-top:12px; background:var(--ok); color:#fff; border:0; border-radius:8px; padding:10px 16px; cursor:pointer; }
+    .hint { margin-top:18px; font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>TikTok Marketing API · 授权回调</h1>
+      <p id="status">正在解析回调参数…</p>
+      <div id="okBox" style="display:none">
+        <p class="ok">已收到授权码。请复制下方 auth_code，交给采集脚本换取 access_token（勿发到公开群）。</p>
+        <label for="code">auth_code / code</label>
+        <textarea id="code" readonly></textarea>
+        <label for="state">state</label>
+        <input id="state" readonly />
+        <button type="button" id="copy">复制 auth_code</button>
+        <p class="hint">换 token 后本页可关闭。redirect_uri 必须与应用后台完全一致：<code>https://www.caonat.vip/oauth/tiktok/callback/</code></p>
+      </div>
+      <div id="errBox" style="display:none">
+        <p class="err" id="errMsg"></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search);
+      var code = q.get("auth_code") || q.get("code") || "";
+      var state = q.get("state") || "";
+      var err = q.get("error") || q.get("error_description") || "";
+      var status = document.getElementById("status");
+      if (err) {
+        status.textContent = "授权失败";
+        document.getElementById("errBox").style.display = "block";
+        document.getElementById("errMsg").textContent = err;
+        return;
+      }
+      if (!code) {
+        status.innerHTML = "未检测到 auth_code。请从 TikTok 广告主授权 URL 完成登录后跳转到本页。<br>当前 URL：" + location.href;
+        return;
+      }
+      status.textContent = "授权成功";
+      document.getElementById("okBox").style.display = "block";
+      document.getElementById("code").value = code;
+      document.getElementById("state").value = state;
+      document.getElementById("copy").onclick = function () {
+        navigator.clipboard.writeText(code).then(function () {
+          document.getElementById("copy").textContent = "已复制";
+        });
+      };
+      try { localStorage.setItem("tiktok_ads_auth_code", code); localStorage.setItem("tiktok_ads_auth_at", new Date().toISOString()); } catch (e) {}
+    })();
+  </script>
+</body>
+</html>

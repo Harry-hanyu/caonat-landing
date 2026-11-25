@@ -1,21 +1,22 @@
 # CAONAT Landing — progress
 
-## Status
-- **Live**: https://caonat.vip （ECS nginx + Let’s Encrypt，非 GitHub Pages）
-- **内容**：品牌站（Products / Collections / About / Shop）+ AI 产品图已上线
-- **部署**：2026-11-19 从 GitHub `main@fe7492a` zip 拉取到 `/var/www/caonat`
+## Status（2026-11-25）
+- **Live**: https://www.caonat.vip （香港 ECS nginx + Let’s Encrypt）
+- **官网 ECS**：`i-j6c9ad3tdqv8nwe7wltl` / `47.238.76.36` / 区域 `cn-hongkong` / webroot `/var/www/caonat`
+- **采集 ECS（杭州）**：`i-bp1fh39fq2qo2le4n1e5` / `118.178.99.35` — 也有旧 `/var/www/caonat` 副本，**DNS 不指向它**
+- **TikTok Ads 回调**：
+  - `/oauth/tiktok/callback/` 已上线
+  - 根路径 `/?auth_code=…` 会自动 `location.replace` 到回调页（与应用后台 redirect=`https://www.caonat.vip/` 一致）
 - **本机**：`/Users/golong/Projects/caonat-landing`
+- **凭据**：`~/.cursor/local/hanlu-tiktok-ads.env`
 
 ## 验证
 ```bash
-curl -sk https://caonat.vip/ | head
-curl -sk -o /dev/null -w "%{http_code}\n" https://caonat.vip/images/hero-lifestyle.jpg
+curl -sk https://www.caonat.vip/oauth/tiktok/callback/ | head
+curl -sk 'https://www.caonat.vip/?auth_code=TEST&state=x' | rg location.replace
 ```
 
-## 下一步（TikTok 审核）
-1. 在 TikTok For Business Developers 用 **https://caonat.vip** 重新提交网站审核
-2. 可选：办 ICP / Cloudflare，让 HTTP:80 也不被 Beaver 拦（目前 HTTPS 正常）
-3. 勿再依赖 github.io / 第三方托管指纹
-
-## 注意
-- ECS `i-bp1fh39fq2qo2le4n1e5` 与 hanlu-odps-sync 共用，部署只动 `/var/www/caonat`，勿动 `/opt/hanlu-odps-sync`
+## 下一步
+1. 浏览器打开广告主授权 URL（env 里 `TIKTOK_ADS_ADVERTISER_AUTH_URL`）完成授权
+2. 回调页复制 auth_code → `python3 ~/Projects/hanlu-odps-sync/scripts/tiktok_ads_exchange_token.py --auth-code '…'`
+3. （可选）门户邮箱验证码通过后，把后台 redirect 改成专用 callback 路径

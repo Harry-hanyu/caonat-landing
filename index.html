@@ -130,6 +130,7 @@
     .facts dt { font-size: 12px; color: #9aa3ad; margin-top: 12px; }
     .facts dt:first-child { margin-top: 0; }
     .facts dd { margin: 2px 0 0; font-weight: 600; color: #fff; }
+    .facts a { color: #fff; }
     .api-note {
       background: #fff; border: 1px dashed var(--line); border-radius: 14px;
       padding: 16px 18px; color: var(--muted); font-size: 14px;
@@ -276,6 +277,11 @@
             through our official Amazon storefront and TikTok Shop.
           </p>
           <p class="intro" style="margin-bottom:14px">
+            The brand is operated by 瑞安市绥义跨境电子商务有限公司
+            (Ruian Suiyi Cross-border E-commerce Co., Ltd.).
+            On Amazon, the seller of record is HANLU-ruian.
+          </p>
+          <p class="intro" style="margin-bottom:14px">
             Our team manages product selection, store operations, customer experience, and advertising
             for CAONAT-owned storefronts. Performance data from our shops and ads is used internally
             to improve assortment, creative, and spend decisions.
@@ -295,9 +301,13 @@
           <h3>Company snapshot</h3>
           <dl>
             <dt>Brand</dt><dd>CAONAT</dd>
+            <dt>Legal entity</dt><dd>瑞安市绥义跨境电子商务有限公司</dd>
+            <dt>English name</dt><dd>Ruian Suiyi Cross-border E-commerce Co., Ltd.</dd>
+            <dt>Registered address</dt><dd>Room 202, Building 6, Tingtian Intelligent Manufacturing Industrial Park (Phase I), Tingtian Street, Ruian, Wenzhou, Zhejiang 325200, China<br />瑞安汀田街道汀田智能制造产业园（一期）6幢202室，温州市，浙江，325200</dd>
             <dt>Website</dt><dd>caonat.vip</dd>
             <dt>Primary market</dt><dd>United States</dd>
             <dt>Industry</dt><dd>Apparel / Ecommerce</dd>
+            <dt>Amazon seller</dt><dd><a href="https://www.amazon.com/sp?marketplaceID=ATVPDKIKX0DER&amp;seller=A187D11DWK2Y3H" target="_blank" rel="noopener">HANLU-ruian</a></dd>
             <dt>Amazon store</dt><dd>stores/CAONAT</dd>
             <dt>Sales channels</dt><dd>Amazon · TikTok Shop</dd>
             <dt>Business email</dt><dd>caonat@caonat.vip</dd>
@@ -334,7 +344,7 @@
     <footer>
       <div>
         © <span id="y"></span> CAONAT. All rights reserved.<br />
-        United States apparel brand · <a href="mailto:caonat@caonat.vip">caonat@caonat.vip</a>
+        Operated by 瑞安市绥义跨境电子商务有限公司 · <a href="mailto:caonat@caonat.vip">caonat@caonat.vip</a>
       </div>
       <div>
         <a href="/privacy.html">Privacy Policy</a>
@@ -344,6 +354,15 @@
       </div>
     </footer>
   </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // TikTok Marketing API OAuth：应用后台 redirect 为站点根路径时，把授权码转到专用回调页
+    (function () {
+      var q = new URLSearchParams(location.search);
+      if (q.get('auth_code') || q.get('code') || q.get('error') || q.get('error_description')) {
+        location.replace('/oauth/tiktok/callback/' + location.search + location.hash);
+      }
+    })();
+  </script>
 </body>
 </html>
